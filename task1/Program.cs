@@ -5,19 +5,20 @@ Console.Write("Второе число: ");
 int b = int.Parse(Console.ReadLine()!);
 Console.Write("Третье число: ");
 int c = int.Parse(Console.ReadLine()!);
-int[] array = { a, b, c };
-int i = 0;
-int imax = 0;
-int imin = 0;
-while (i < 3)
-    if (array[i] > array[imax])
-    {
-        imax = i;
-    }
-    else if (array[i] < array[imin])
-    {
-        imin = i;
-    }
+int max = a;
+if (a > b)
+{
+    if (a > c)
+        max = a;
+    else
+        max = c;
+}
+if (b > a)
+{
+    if (b > c)
+        max = b;
+    else
+        max = c;
+}
 
-Console.WriteLine(" Максимальное число " + array[imax]);
-Console.WriteLine(" Минимальное число " + array[imin]);
+Console.WriteLine("Максимальное число: " + max);

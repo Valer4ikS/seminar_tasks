@@ -33,3 +33,4 @@ PrintArray(array);
 int[] aray = array.Where(x => x % 2 == 0).ToArray();
 Console.WriteLine(string.Join(", ", aray.Select(x => x.ToString())));
 
+// 

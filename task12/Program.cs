@@ -5,7 +5,9 @@
 Console.Clear();
 Console.Write("Введите число: ");
 int num = int.Parse(Console.ReadLine()!);
+
 int[] array = GetBinArray(num);
+
 Console.WriteLine($"[{String.Join(", ", array)}]");
 
 int[] GetBinArray(int size){

@@ -15,14 +15,11 @@ using static System.Console;
 
 Clear();
 
-// Write("Введите количество строк массива: ");
-int rows = Prompt("Введите количество строк массива: "); // int.Parse(ReadLine()!);
-// Write("Введите количество столбцов массива: ");
-int columns = Prompt("Введите количество столбцов массива: "); // int.Parse(ReadLine()!);
+int rows = Prompt("Введите количество строк массива: "); // int.Parse
+int columns = Prompt("Введите количество столбцов массива: "); // int.Parse
 
-double[,] array = new double[rows, columns];
-// double[,] array = GetArray(rows, columns, -10, 10);
-GetArray(array);
+// double[,] array = new double[rows, columns];
+double[,] array = GetArray(rows, columns, -10, 10);
 PrintArray(array);
 
 int Prompt(string message)
@@ -32,27 +29,30 @@ int Prompt(string message)
     return num;
 }
 
-void GetArray(double[,] inArray)
+double[,] GetArray(int m, int n, int min, int max)
 {
-    // double[,] result = new double[m, n];
-    for(int i = 0; i< inArray.GetLength(0); i++)
+    double[,] result = new double[m, n];
+    for(int i = 0; i< m; i++)
     {
-        for(int j = 0; j < inArray.GetLength(1); j++)
+        for(int j = 0; j < n; j++)
         {
-            inArray[i, j] = Convert.ToDouble(new Random().Next(-100, 100)) / 10;
+            result[i, j] = Convert.ToDouble(new Random().Next(min, max + 1)) / 10;
         }
     }
-    // return result;
+    return result;
 }
 
 void PrintArray(double[,] inArray)
 {
+    
     for(int i = 0; i< inArray.GetLength(0); i++)
     {
+        // Write("[");
         for(int j = 0; j < inArray.GetLength(1); j++)
         {
-            Write($"{inArray[i, j]} \t ");
+            Write($"{inArray[i, j]} \t");
         }
+        // Write("]");
         WriteLine();
     }
 }

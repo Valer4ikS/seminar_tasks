@@ -13,14 +13,13 @@ using static System.Console;
 
 Clear();
 
-int a = Prompt("Введите размерность матриц: ");
-int b = Prompt("Введите размерность матриц: ");
-int c = Prompt("Введите размерность матриц: ");
+int a = Prompt("Введите 1 размерность матрицы: ");
+int b = Prompt("Введите 2 размерность матрицы: ");
+int c = Prompt("Введите 3 размерность матрицы: ");
 
-int[,,] array = GetArray(a, b, c, 0, 5);
-WriteLine("Трехмерный массив");
+
+int[,,] array = Get3DArray(a, b, c, 0, 5);
 PrintArray(array);
-WriteLine();
 WriteLine();
 
 
@@ -31,7 +30,7 @@ int Prompt(string message)
     return num;
 }
 
-int[,,] GetArray(int m, int n, int c, int min, int max)
+int[,,] Get3DArray(int m, int n, int c, int min = 0, int max = 0)
 {
     int[,,] result = new int[m, n, c];
     for(int i = 0; i < m; i++)
@@ -51,15 +50,15 @@ void PrintArray(int[,,] inArray)
 {
     for(int i = 0; i< inArray.GetLength(0); i++)
     {
-        Write("[ ");
         for(int j = 0; j < inArray.GetLength(1); j++)
         {
                 for(int k = 0; k < inArray.GetLength(2); k++)
                 {
-                    Write($"{inArray[i, j, k]} ");
+                    WriteLine($"{inArray[i, j, k]}({i},{j},{k})");
+                    //2ой вариант вывода WriteLine($"({i},{j},{k}) - {inArray[i, j, k]}"); 
                 }
         }
-        Write("]");
-        WriteLine();
+        // WriteLine();
     }
 }
+

@@ -88,6 +88,8 @@ int[,] GetMultiArray(int[,] inArray1, int[,] inArray2)
 
 // int[,] GetMultiArray(int[,] inArray1, int[,] inArray2)
 // {
+//     int   
+//     int   
 //     int[,] multiArray = new int[sizeR, sizeC];
 //     for(int i = 0; i < inArray1.GetLength(0); i++)
 //     {

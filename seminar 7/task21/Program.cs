@@ -20,6 +20,7 @@ int[,] array = GetArray(rows, columns, 0, 10);
 
 PrintArray(array);
 
+// поиск среднего арифмметического
 for (int j = 0; j < array.GetLength(1); j++)
     {   
         double average = 0;

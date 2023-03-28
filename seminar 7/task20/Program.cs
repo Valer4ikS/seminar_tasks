@@ -30,6 +30,7 @@ int[,] array = GetArray(rows, columns, 0, 20);
 
 PrintArray(array);
 
+// bool 
 if (rowsNum > array.GetLength(0) || elNum > array.GetLength(1))
 {
     WriteLine("такого элемента нет");
